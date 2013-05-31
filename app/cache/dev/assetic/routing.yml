@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /home3/sardoni1/public_html/hbt.lesterlogic.com/app/config/routing_dev.yml

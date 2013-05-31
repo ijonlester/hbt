@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Restricted Access"
+AuthUserFile /home3/sardoni1/secure/htpasswd
+Require user hbt
