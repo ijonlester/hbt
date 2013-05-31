@@ -1,0 +1,38 @@
+llhbt_read_entry:
+    pattern: /view/{id}
+    defaults: { _controller: LLHBTBundle:Default:getEntry }
+    requirements:
+        _method: GET
+    
+llhbt_create_entry:
+    pattern: /create
+    defaults: { _controller: LLHBTBundle:Default:updateEntry }
+    requirements:
+        _method: POST
+        
+llhbt_update_entry:
+    pattern: /update/{id}
+    defaults: { _controller: LLHBTBundle:Default:updateEntry }
+    requirements:
+        _method: POST
+        
+llhbt_delete_entry:
+    pattern: /delete/{id}
+    defaults: { _controller: LLHBTBundle:Default:deleteEntry }
+    requirements:
+        _method: GET
+        
+llhbt_get_chart:
+    pattern: /chart/{start}/{end}/{chart}
+    defaults: { _controller: LLHBTBundle:Default:getChartEntries, chart:"PieChart" }
+    requirements:
+        _method: GET
+        
+llhbt_get_entries:
+    pattern: /{start}/{end}
+    defaults: { _controller: LLHBTBundle:Default:getEntries, end:'' }
+     
+llhbt_homepage:
+    pattern:  /
+    defaults: { _controller: LLHBTBundle:Default:index }
+    

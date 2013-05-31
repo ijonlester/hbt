@@ -1,0 +1,15 @@
+[2013-05-28 13:07:43] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /bundles/llhbt/css/bundles/llhbt/images/bg.gif" (uncaught exception) at /home3/sardoni1/public_html/hbt.lesterlogic.com/app/cache/prod/classes.php line 5121 [] []
+[2013-05-28 16:02:32] request.INFO: Matched route "llhbt_homepage" (parameters: "_controller": "LL\HBTBundle\Controller\DefaultController::indexAction", "_route": "llhbt_homepage") [] []
+[2013-05-28 16:02:32] security.INFO: Populated SecurityContext with an anonymous Token [] []
+[2013-05-28 16:02:32] request.CRITICAL: PDOException: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '127.0.0.1' (111) (uncaught exception) at /home3/sardoni1/public_html/hbt.lesterlogic.com/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php line 36 [] []
+[2013-05-28 16:02:33] security.DEBUG: Write SecurityContext in the session [] []
+[2013-05-28 16:02:35] request.INFO: Matched route "llhbt_homepage" (parameters: "_controller": "LL\HBTBundle\Controller\DefaultController::indexAction", "_route": "llhbt_homepage") [] []
+[2013-05-28 16:02:35] security.INFO: Populated SecurityContext with an anonymous Token [] []
+[2013-05-28 16:02:35] request.CRITICAL: PDOException: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '127.0.0.1' (111) (uncaught exception) at /home3/sardoni1/public_html/hbt.lesterlogic.com/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php line 36 [] []
+[2013-05-28 16:02:35] security.DEBUG: Write SecurityContext in the session [] []
+[2013-05-30 00:32:56] request.INFO: Matched route "llhbt_get_entries" (parameters: "_controller": "LL\HBTBundle\Controller\DefaultController::getEntriesAction", "end": "2013-03-31", "start": "2013-03-01", "_route": "llhbt_get_entries") [] []
+[2013-05-30 00:32:56] security.INFO: Populated SecurityContext with an anonymous Token [] []
+[2013-05-30 00:35:01] request.CRITICAL: Doctrine\DBAL\DBALException: An exception occurred while executing 'SELECT e0_.id AS id0, e0_.date AS date1, e0_.category AS category2, e0_.type AS type3, e0_.note AS note4, e0_.amount AS amount5 FROM entry e0_ WHERE e0_.date >= ? AND e0_.date <= ? ORDER BY e0_.category ASC, e0_.date DESC, e0_.type ASC, e0_.id ASC' with params {"1":"2013-03-01","2":"2013-03-31"}:
+
+SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query (uncaught exception) at /home3/sardoni1/public_html/hbt.lesterlogic.com/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php line 47 [] []
+[2013-05-30 00:35:02] security.DEBUG: Write SecurityContext in the session [] []

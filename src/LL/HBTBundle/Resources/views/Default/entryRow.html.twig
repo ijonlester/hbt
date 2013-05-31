@@ -1,0 +1,9 @@
+<div class="entry-row">
+    <div class="entry-row-item close">
+        <div class="entry-row-delete" entryId="{{ entry.id }}">X</div>
+    </div>
+    <div class="entry-row-item date">{{ entry.date.date|date('Y-m-d') }}</div>
+    <div class="entry-row-item type">{{ entry.type }}</div>
+    <div class="entry-row-item note">{{ entry.note }}</div>
+    <div class="entry-row-item amount">{{ entry.amount }}</div>
+</div>

@@ -1,0 +1,85 @@
+{# src/LL/HBTBundle/Resources/views/Default/index.html.twig #}
+{% extends 'LLHBTBundle:Default:base.html.twig' %}
+{% block body %}
+    <div id="main-outer">
+        <div id="main-outer-header">Household Budget Tracker</div>
+        <div id="main-inner">
+            <div id="main-inner-entry-form">
+                {% include 'LLHBTBundle:Default:entryForm.html.twig' %}
+                <div id="add-entry-button">
+                    <div id="add-entry-icon">
+                        <img src="{{ asset('bundles/llhbt/images/icon-add-entry.png') }}" width="22" height="22" alt="Add Entry" />
+                    </div>
+                    Add Entry
+                </div>
+            </div>
+            <div id="main-inner-header">
+                <select name="entry-filter" id="entry-filter">
+                    <option value"">Filter by...</option>
+                    <option value="today">Today</option>
+                    <option value="this-week">This Week</option>
+                    <option value="this-month">This Month</option>
+                    <option value="this-year">This Year</option>
+                    <option value="past-week">Past Week</option>
+                    <option value="past-month">Past Month</option>
+                    <option value="past-year">Past Year</option>
+                    <option value="custom">Custom...</option>
+                </select>
+                <div id="entry-filter-custom">
+                    <input type="text" size="10" name="start-date" id="entry-filter-custom-start" class="datepicker" />
+                    <input type="text" size="10" name="end-date" id="entry-filter-custom-end" class="datepicker" />
+                    <input type="button" name="entry-filter-custom-button" id="entry-filter-custom-button" value="Search" />
+                </div>
+            </div>
+            <div id="main-inner-body">
+                <div id="main-inner-body-header">
+                    {{ range.start|date('M. j, Y') }} to {{ range.end|date('M. j, Y') }}
+                    {% if entries|length > 0 %}
+                    <div id="main-inner-body-togglereport" class="ui-state-default ui-corner-all" title="Toggle Report View"><span class="ui-icon ui-icon-image"></span></div>
+                    {% endif %}   
+                </div>
+                
+
+                {% if entries|length == 0 %}
+                    <div id="main-inner-body-noentries">There are no entries within date range.</div>
+                {% else %}
+                    <div id="main-inner-body-chart-block">
+                        <div id="main-inner-body-chart-controls"></div>
+                        <div id="main-inner-body-chart"></div>
+                        <div id="main-inner-body-chart-loading">
+                            <img src="{{ asset('bundles/llhbt/images/ajax-loader.gif') }}" width="66" height="66" alt="Loading..." />
+                        </div>
+                    </div>
+                    {% set total = 0 %}
+                    {% for cat in entries %}
+                        {% include 'LLHBTBundle:Default:entryRowHeader.html.twig' with {'cat': cat} %}
+                        {% for entry in cat['entries'] %}
+                        	{% include 'LLHBTBundle:Default:entryRow.html.twig'
+                           		with {'entry': entry} %}
+                        	{% set total = total + entry.amount %}
+                        {% endfor %}
+                        {% include 'LLHBTBundle:Default:entryRowSubtotal.html.twig' with {'subtotal': cat['subtotal']} %}
+                    {% endfor %}
+                    <div class="entry-row-total">
+                        Total: {{ total }}
+                    </div>
+                {% endif %}
+            </div>
+            <div id="main-inner-footer">&copy;2013 Jon Lester</div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+    var dateStart = '{{ range.start|date('Y-m-d') }}';
+    var dateEnd = '{{ range.end|date('Y-m-d') }}';
+    var categories = [
+        {% for cat in categories %}
+            {'label':'{{cat.label}}', 'category':'{{cat.category}}'},
+
+        {% endfor %}
+    ];
+    </script>
+    {{ parent() }}
+{% endblock %}

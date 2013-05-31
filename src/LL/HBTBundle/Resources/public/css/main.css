@@ -1,0 +1,280 @@
+html {
+    height: 100%;
+    background: #FFF url(/web/bundles/llhbt/images/bg.gif) left top repeat;
+}
+
+body {
+    font-size: 11px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #1B1802;
+}
+
+#main-outer {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(202, 196, 163, .80);
+    padding: 0px 15px 15px 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .55);
+}
+
+#main-outer-header {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#main-inner {
+    position: relative;
+}
+
+#main-inner-header {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 5px 0px;
+    background-color: #282721;
+    border-top-left-radius: 10px;  
+    border-top-right-radius: 10px;
+    min-height: 20px;
+}
+
+#main-inner-body-togglereport {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    vertical-align: bottom;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#main-inner-body-chart-loading {
+    width: 66px;
+    height: 66px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-inner-entry-form {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 125px;
+    z-index: 10;
+    border-radius: 0px 10px 0px 10px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, .55);
+}
+
+#main-inner-entry-form.active {
+    border-radius: 0px 10px 10px 10px;
+}
+
+#add-entry-button {
+    height: 23px;
+    line-height: 23px;
+    padding: 6px 5px;
+    background-color: #9d0a10;
+    color: #cac7b6;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: right;
+    border-radius: 0px 10px 0px 10px;
+    cursor: pointer;
+    background-image: linear-gradient(bottom, rgb(157,10,15) 1%, rgba(40,39,34, .55) 55%, rgb(157,10,15) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(157,10,15) 1%, rgba(40,39,34, .55) 55%, rgb(157,10,15) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(157,10,15) 1%, rgba(40,39,34, .55) 55%, rgb(157,10,15) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(157,10,15) 1%, rgba(40,39,34, .55) 55%, rgb(157,10,15) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(157,10,15) 1%, rgba(40,39,34, .55) 55%, rgb(157,10,15) 100%);
+
+    background-image: -webkit-gradient(
+    	linear,
+    	left bottom,
+    	left top,
+    	color-stop(0.01, rgb(157,10,15)),
+    	color-stop(0.55, rgba(40,39,34, .55)),
+    	color-stop(1, rgb(157,10,15))
+    );
+}
+
+#add-entry-button.active {
+    border-radius: 0px 0px 10px 10px;
+}
+
+#add-entry-icon {
+    width: 22px;
+    float: left;
+    padding-left: 5px;
+}
+
+#main-inner-body {
+    position: relative;
+    padding: 20px 0px;
+    background-color: #FFF;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#main-inner-body-header {
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: .75em;
+    color: #282722;
+}
+
+#main-inner-body-chart-block {
+    display: none;
+}
+
+#main-inner-body-chart-controls {
+    padding: 5px;
+    text-align: center;
+}
+
+#main-inner-body-chart-controls div {
+    display: inline-block;
+    margin-right: 2em;
+}
+
+#main-inner-body-chart {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-inner-body-noentries {
+    padding-left: 20px;
+}
+
+#main-inner-footer {
+    position: absolute;
+    width: 100%;
+    bottom: -35px;
+    padding-top: 1em;
+    text-align: center;
+    color: #282721;
+}
+
+.entry-form {
+    display: none;
+    padding: 5px;
+    background-color: #FFF;
+    border-top-right-radius: 10px;
+    line-height: 1.75em;
+}
+
+.entry-form.visible {
+    display: block;
+}
+
+.entry-form label {
+    display: inline-block;
+    width: 50px;
+    margin-right: 5px;
+}
+
+.entry-form input {
+    font-size: 11px;
+    width: 118px;
+}
+
+.entry-form-buttons {
+    text-align: right;
+}
+
+.new-entry-row-add, .new-entry-row-remove {
+    cursor: pointer;
+}
+
+.entry-row {
+    border-bottom: 1px #CCC dotted;
+    padding: 3px 0px;    
+}
+
+.entry-row:hover {
+    background-color: rgba(202, 198, 180, .5);
+}
+
+.entry-row-total {
+    padding: 3px 10px;
+    margin-top: 1em;
+    text-align: right;
+    font-weight: bold;
+}
+
+.entry-row-item {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.entry-row-item.close {
+    width: 5%;
+    min-width: 20px;
+}
+
+.entry-row-delete {
+    display: none;
+    width: 20px;
+    background: #9d0a10 url(/web/bundles/llhbt/images/icon-entry-delete.gif) right center no-repeat;
+    color: #cac7b6;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.entry-row-item.date {
+    width: 10%;
+}
+
+.entry-row-item.type {
+    width: 35%;
+}
+
+.entry-row-item.note {
+    width: 35%;
+}
+
+.entry-row-item.amount {
+    width: 12%;
+    text-align: right;
+}
+
+.entry-row-header {
+    border-bottom: 1px #DDD solid;
+    padding: 3px 0px; 
+}
+
+.entry-row-header-item {
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+#entry-filter {
+    margin-left: 5px;
+}
+
+#entry-filter, #entry-filter-custom input {
+    font-size: 11px;
+    padding: 0px;
+}
+
+#entry-filter-custom {
+    display: none;
+    width: 300px;
+}
+
+.entry-row-subtotal {
+    padding: 3px 0px;   
+}
+
+.entry-row-subtotal-item {
+    display: inline-block;
+    width: 12%;
+    text-align: right;
+    vertical-align: top;
+	font-weight: bold;
+}
